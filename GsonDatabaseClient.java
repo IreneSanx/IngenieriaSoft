@@ -4,12 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class GsonDatabaseClient {
-	
-	private static ElementoCadMan elemento;
 
 	public static void main(String[] args) {
 		try{
-			DatabaseJSonReader dbjp = new DatabaseJSonReader(elemento);
+			DatabaseJSonReader dbjp = new DatabaseJSonReader();
 
 			try {
 				System.out.println(dbjp.parse("./datos.json"));

@@ -25,6 +25,9 @@ public class DatabaseJSonReader {
 
 	private static final String FIELD_SEPARATOR = ";";*/
 	
+	public DatabaseJSonReader(){
+	}
+	
 	ElementoCadMan cadenamando;
 
 	public DatabaseJSonReader(ElementoCadMan cadman){

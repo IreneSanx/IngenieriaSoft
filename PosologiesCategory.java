@@ -13,7 +13,7 @@ public class PosologiesCategory extends ElementoCadMan{
 		super(sig);
 	}
 	
-	private StringBuffer readPosologies(JsonReader reader, String name) throws IOException {
+	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException {
 		if(name.equals(POSOLOGIES_TAGNAME)) {
 			StringBuffer posologiesData = new StringBuffer();
 			reader.beginArray();
@@ -37,6 +37,8 @@ public class PosologiesCategory extends ElementoCadMan{
 		}
 		return null;
 	}
+	
+	
 	// Parses the contents of a medicine. 
 	private String readPosologiesEntry(JsonReader reader) throws IOException {
 		//	        reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);

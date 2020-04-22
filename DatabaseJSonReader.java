@@ -25,8 +25,7 @@ public class DatabaseJSonReader {
 
 	private static final String FIELD_SEPARATOR = ";";*/
 	
-	public DatabaseJSonReader(){
-	}
+	public DatabaseJSonReader() {}
 	
 	ElementoCadMan cadenamando;
 
@@ -34,16 +33,11 @@ public class DatabaseJSonReader {
 		cadenamando = cadman; 
 	}
 
-	public StringBuffer leerCategoria(JsonReader reader, String name) {
+	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException{
 		return cadenamando.leerCategoria(reader, name);
 	}
 	
 	public String parse(String jsonFileName) throws IOException {
-
-		RescueMedicineCategory rmc = new RescueMedicineCategory(null);
-		MedicinesCategory mc = new MedicinesCategory(rmc);
-		PosologiesCategory pc = new PosologiesCategory(mc);
-		DatabaseJSonReader dr = new DatabaseJSonReader(pc);
 		
 		InputStream usersIS = new FileInputStream (new File(jsonFileName));
 		JsonReader reader = new JsonReader(new InputStreamReader(usersIS, "UTF-8"));
@@ -51,10 +45,10 @@ public class DatabaseJSonReader {
 		reader.beginObject();
 		StringBuffer readData = new StringBuffer();
 		
-		String name = reader.nextName();
-		
 		while (reader.hasNext()) {
-			readData.append(dr.leerCategoria(reader,name)).append("\n");
+			
+			String name = reader.nextName();
+			readData.append(leerCategoria(reader,name)).append("\n");
 
 			/*if (name.equals(MEDICINES_TAGNAME)) {
 				readData.append(readMedicines(reader)).append("\n");
@@ -65,7 +59,6 @@ public class DatabaseJSonReader {
 				System.err.println("Category " + name + " not processed.");
 			}*/
 		}
-
 		reader.endObject();
 		reader.close();
 		usersIS.close();

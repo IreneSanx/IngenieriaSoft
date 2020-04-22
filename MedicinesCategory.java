@@ -12,9 +12,8 @@ public class MedicinesCategory extends ElementoCadMan {
 	public MedicinesCategory(ElementoCadMan sig) {
 		super(sig);
 	}
-
-
-	private StringBuffer readMedicines(JsonReader reader, String name) throws IOException {
+	
+	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException {
 		if(name.equals(MEDICINES_TAGNAME)) {
 			StringBuffer medicineData = new StringBuffer();
 			reader.beginArray();
@@ -38,6 +37,8 @@ public class MedicinesCategory extends ElementoCadMan {
 		}
 		return null;
 	}
+
+	
 	// Parses the contents of a medicine. 
 	private String readMedicineEntry(JsonReader reader) throws IOException {
 		//	        reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
@@ -47,7 +48,9 @@ public class MedicinesCategory extends ElementoCadMan {
 			if(name.equals(NAME_FIELD_TAGNAME)) {
 				medName = reader.nextString();
 			}
-			reader.skipValue();
+			else {
+				reader.skipValue();
+			}
 		}
 		return medName;
 	}

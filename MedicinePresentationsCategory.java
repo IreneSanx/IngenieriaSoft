@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.google.gson.stream.JsonReader;
 
 public class MedicinePresentationsCategory extends ElementoCadMan {
-	private static final String RESCUEMEDPRES_TAGNAME = "rescueMedicinePresentations";
+	private static final String MEDPRES_TAGNAME = "medicinePresentations";
 	
 	private static final String MEDREF_FIELD_TAGNAME = "medicineRef";
 	private static final String ACTINGREF_FIELD_TAGNAME = "activeIngRef";
@@ -20,7 +20,7 @@ public class MedicinePresentationsCategory extends ElementoCadMan {
 	}
 	
 	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException{
-		if(name.equals(RESCUEMEDPRES_TAGNAME)) {
+		if(name.equals(MEDPRES_TAGNAME)) {
 			StringBuffer MedicinePresentationData = new StringBuffer();
 			reader.beginArray();
 			while (reader.hasNext()) {

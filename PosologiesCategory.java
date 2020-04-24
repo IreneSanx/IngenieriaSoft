@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonReader;
 public class PosologiesCategory extends ElementoCadMan{
 
 	private static final String POSOLOGIES_TAGNAME = "posologies";
-	private static final String DESC_FIELD_TAGNAME = "medicineRef";
+	private static final String DESC_FIELD_TAGNAME = "description";
 	
 	public PosologiesCategory(ElementoCadMan sig) {
 		super(sig);
@@ -48,9 +48,12 @@ public class PosologiesCategory extends ElementoCadMan{
 			if(name.equals(DESC_FIELD_TAGNAME)) {
 				posName = reader.nextString();
 			}
-			reader.skipValue();
+			else {
+				reader.skipValue();
+			}
 		}
 		return posName;
 	}
 
 }
+

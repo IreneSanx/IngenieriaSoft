@@ -6,7 +6,7 @@ import com.google.gson.stream.JsonReader;
 
 public class PhysiotherapiesCategory extends ElementoCadMan {
 
-	private static final String PHYSIOTHERAPIES_TAGNAME = "medicines";
+	private static final String PHYSIOTHERAPIES_TAGNAME = "physiotherapies";
 	private static final String NAME_FIELD_TAGNAME = "name";
 	private static final String IMAGE_FIELD_TAGNAME = "image";
 	private static final String FIELD_SEPARATOR = ";";

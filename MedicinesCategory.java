@@ -15,7 +15,8 @@ public class MedicinesCategory extends ElementoCadMan {
 	
 	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException {
 		if(name.equals(MEDICINES_TAGNAME)) {
-			StringBuffer medicineData = new StringBuffer();
+			return super.leerComun(reader, name);
+			/*StringBuffer medicineData = new StringBuffer();
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
@@ -24,7 +25,7 @@ public class MedicinesCategory extends ElementoCadMan {
 			}
 			medicineData.append("\n");
 			reader.endArray();
-			return medicineData;
+			return medicineData;*/
 		}
 
 		else {
@@ -40,7 +41,7 @@ public class MedicinesCategory extends ElementoCadMan {
 
 	
 	// Parses the contents of a medicine. 
-	private String readMedicineEntry(JsonReader reader) throws IOException {
+	public String readEntry(JsonReader reader) throws IOException {
 		//	        reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
 		String medName = null;
 		while(reader.hasNext()){

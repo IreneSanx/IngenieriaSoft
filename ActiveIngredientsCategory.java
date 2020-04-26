@@ -15,7 +15,8 @@ public class ActiveIngredientsCategory extends ElementoCadMan {
 	
 	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException {
 		if(name.equals(ACTIVEINGREDIENTS_TAGNAME)) {
-			StringBuffer activeIngredientsData = new StringBuffer();
+			return super.leerComun(reader, name);
+			/*StringBuffer activeIngredientsData = new StringBuffer();
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
@@ -24,7 +25,7 @@ public class ActiveIngredientsCategory extends ElementoCadMan {
 			}
 			activeIngredientsData.append("\n");
 			reader.endArray();
-			return activeIngredientsData;
+			return activeIngredientsData;*/
 		}
 
 		else {
@@ -40,7 +41,7 @@ public class ActiveIngredientsCategory extends ElementoCadMan {
 
 	
 	// Parses the contents of a medicine. 
-	private String readactiveIngredientsEntry(JsonReader reader) throws IOException {
+	public String readEntry(JsonReader reader) throws IOException {
 		//	        reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
 		String acIngName = null;
 		while(reader.hasNext()){

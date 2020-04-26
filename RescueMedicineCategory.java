@@ -20,7 +20,8 @@ public class RescueMedicineCategory extends ElementoCadMan {
 	
 	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException{
 		if(name.equals(RESCUEMEDPRES_TAGNAME)) {
-			StringBuffer rescueMedicinePresentationData = new StringBuffer();
+			return super.leerComun(reader, name);
+			/*StringBuffer rescueMedicinePresentationData = new StringBuffer();
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
@@ -29,7 +30,7 @@ public class RescueMedicineCategory extends ElementoCadMan {
 			}
 			rescueMedicinePresentationData.append("\n");
 			reader.endArray();
-			return rescueMedicinePresentationData;
+			return rescueMedicinePresentationData;*/
 		}
 		else {
 			if(siguiente != null) {
@@ -44,7 +45,7 @@ public class RescueMedicineCategory extends ElementoCadMan {
 	
 
 	// Parses the contents of a rescue medicine presentation entry
-	private String readRescueMedicinePresentationEntry(JsonReader reader) throws IOException {
+	public String readEntry(JsonReader reader) throws IOException {
 		String medRef = null;
 		String aiRef = null;
 		String inhRef = null;

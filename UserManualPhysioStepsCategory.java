@@ -21,7 +21,8 @@ public class UserManualPhysioStepsCategory extends ElementoCadMan {
 	
 	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException {
 		if(name.equals(USERMANUAL_TAGNAME)) {
-			StringBuffer userManualData = new StringBuffer();
+			return super.leerComun(reader, name);
+			/*StringBuffer userManualData = new StringBuffer();
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
@@ -30,7 +31,7 @@ public class UserManualPhysioStepsCategory extends ElementoCadMan {
 			}
 			userManualData.append("\n");
 			reader.endArray();
-			return userManualData;
+			return userManualData;*/
 		}
 
 		else {
@@ -46,7 +47,7 @@ public class UserManualPhysioStepsCategory extends ElementoCadMan {
 
 	
 	// Parses the contents of a medicine. 
-	private String readUserManualEntry(JsonReader reader) throws IOException {
+	public String readEntry(JsonReader reader) throws IOException {
 		//	        reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
 		String stepTit = null;
 		String stepIm = null;

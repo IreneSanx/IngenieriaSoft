@@ -18,7 +18,8 @@ public class PhysiotherapiesCategory extends ElementoCadMan {
 	
 	public StringBuffer leerCategoria(JsonReader reader, String name) throws IOException {
 		if(name.equals(PHYSIOTHERAPIES_TAGNAME)) {
-			StringBuffer physiotherapiesData = new StringBuffer();
+			return super.leerComun(reader, name);
+			/*StringBuffer physiotherapiesData = new StringBuffer();
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
@@ -27,7 +28,7 @@ public class PhysiotherapiesCategory extends ElementoCadMan {
 			}
 			physiotherapiesData.append("\n");
 			reader.endArray();
-			return physiotherapiesData;
+			return physiotherapiesData;*/
 		}
 
 		else {
@@ -43,7 +44,7 @@ public class PhysiotherapiesCategory extends ElementoCadMan {
 
 	
 	// Parses the contents of a medicine. 
-	private String readPhysiotherapiesEntry(JsonReader reader) throws IOException {
+	public String readEntry(JsonReader reader) throws IOException {
 		//	        reader.require(XmlPullParser.START_TAG, ns, SINGLE_ELEMENT_TAGNAME);
 		String phyName = null;
 		String imName = null;

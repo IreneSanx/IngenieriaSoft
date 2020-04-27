@@ -23,7 +23,7 @@ public class PhysiotherapiesCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				physiotherapiesData.append(readPhysiotherapiesEntry(reader)).append("\n");
+				physiotherapiesData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			physiotherapiesData.append("\n");

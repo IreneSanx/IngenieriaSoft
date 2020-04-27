@@ -20,7 +20,7 @@ public class MedicinesCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				medicineData.append(readMedicineEntry(reader)).append("\n");
+				medicineData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			medicineData.append("\n");

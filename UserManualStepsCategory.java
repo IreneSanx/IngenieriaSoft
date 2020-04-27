@@ -26,7 +26,7 @@ public class UserManualStepsCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				userManualStepsData.append(readUserManualStepsEntry(reader)).append("\n");
+				userManualStepsData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			userManualStepsData.append("\n");

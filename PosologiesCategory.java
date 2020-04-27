@@ -20,7 +20,7 @@ public class PosologiesCategory extends ElementoCadMan{
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				posologiesData.append(readPosologiesEntry(reader)).append("\n");
+				posologiesData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			posologiesData.append("\n");

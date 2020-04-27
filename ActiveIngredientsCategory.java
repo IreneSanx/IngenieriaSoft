@@ -20,7 +20,7 @@ public class ActiveIngredientsCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				activeIngredientsData.append(readactiveIngredientsEntry(reader)).append("\n");
+				activeIngredientsData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			activeIngredientsData.append("\n");

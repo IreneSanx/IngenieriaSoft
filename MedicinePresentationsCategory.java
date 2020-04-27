@@ -26,7 +26,7 @@ public class MedicinePresentationsCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				MedicinePresentationData.append(readMedicinePresentationEntry(reader)).append("\n");
+				MedicinePresentationData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			MedicinePresentationData.append("\n");

@@ -25,7 +25,7 @@ public class RescueMedicineCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				rescueMedicinePresentationData.append(readRescueMedicinePresentationEntry(reader)).append("\n");
+				rescueMedicinePresentationData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			rescueMedicinePresentationData.append("\n");

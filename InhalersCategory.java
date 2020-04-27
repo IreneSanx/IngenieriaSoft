@@ -23,7 +23,7 @@ public class InhalersCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				inhalersData.append(readInhalersEntry(reader)).append("\n");
+				inhalersData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			inhalersData.append("\n");

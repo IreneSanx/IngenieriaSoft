@@ -26,7 +26,7 @@ public class UserManualPhysioStepsCategory extends ElementoCadMan {
 			reader.beginArray();
 			while (reader.hasNext()) {
 				reader.beginObject();
-				userManualData.append(readUserManualEntry(reader)).append("\n");
+				userManualData.append(readEntry(reader)).append("\n");
 				reader.endObject();
 			}
 			userManualData.append("\n");
